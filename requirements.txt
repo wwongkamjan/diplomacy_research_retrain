@@ -1,6 +1,6 @@
 # diplomacy_research
 bs4
-diplomacy==1.1.0
+diplomacy
 grpcio==1.15.0
 grpcio-tools==1.15.0
 gym>=0.9.6
