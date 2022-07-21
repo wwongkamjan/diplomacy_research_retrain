@@ -127,7 +127,8 @@ def build():
             with open(json_file_path, 'r') as json_file:
                 lines = json_file.read().splitlines()
                 #for game_id, saved_game_zlib in tqdm(pool.imap_unordered(process_game, lines), total=len(lines)):
-                for game_id, saved_game_zlib in tqdm(process_game(lines), total=len(lines)):
+                for line in tqdm(lines, total=len(lines)):
+                    game_id, saved_game_zlib = process_game(line)
                     if game_id is None:
                         continue
                     saved_game_proto = zlib_to_proto(saved_game_zlib, SavedGameProto)
