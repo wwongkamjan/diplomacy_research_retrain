@@ -1,0 +1,6 @@
+model_type: order_based
+model_id: 12
+value_model_id: 1
+nb_transitions_per_update: 1280
+mode: self-play
+use_beam: False
