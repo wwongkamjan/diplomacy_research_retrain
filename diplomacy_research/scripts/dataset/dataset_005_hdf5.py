@@ -115,38 +115,38 @@ def build():
     # Building
     dataset_index = {}
     LOGGER.info('... Building HDF5 dataset.')
-#     with multiprocessing.Pool() as pool:
-    with h5py.File(DATASET_PATH, 'w') as hdf5_dataset, open(PROTO_DATASET_PATH, 'wb') as proto_dataset:
+    with multiprocessing.Pool() as pool:
+        with h5py.File(DATASET_PATH, 'w') as hdf5_dataset, open(PROTO_DATASET_PATH, 'wb') as proto_dataset:
 
-        for json_file_path in glob.glob(extract_dir + '/*.jsonl'):
-            LOGGER.info('... Processing: %s', json_file_path)
-            category = json_file_path.split('/')[-1].split('.')[0]
-            dataset_index[category] = set()
+            for json_file_path in glob.glob(extract_dir + '/*.jsonl'):
+                LOGGER.info('... Processing: %s', json_file_path)
+                category = json_file_path.split('/')[-1].split('.')[0]
+                dataset_index[category] = set()
 
-            # Processing file using pool
-            with open(json_file_path, 'r') as json_file:
-                lines = json_file.read().splitlines()
-                #for game_id, saved_game_zlib in tqdm(pool.imap_unordered(process_game, lines), total=len(lines)):
-                for line in tqdm(lines, total=len(lines)):
-                    game_id, saved_game_zlib = process_game(line)
-                    if game_id is None:
-                        continue
-                    saved_game_proto = zlib_to_proto(saved_game_zlib, SavedGameProto)
+                # Processing file using pool
+                with open(json_file_path, 'r') as json_file:
+                    lines = json_file.read().splitlines()
+                    for game_id, saved_game_zlib in tqdm(pool.imap_unordered(process_game, lines), total=len(lines)):
+#                     for line in tqdm(lines, total=len(lines)):
+#                         game_id, saved_game_zlib = process_game(line)
+                        if game_id is None:
+                            continue
+                        saved_game_proto = zlib_to_proto(saved_game_zlib, SavedGameProto)
 
-                    # Saving to disk
-                    hdf5_dataset[game_id] = np.void(saved_game_zlib)
-                    write_proto_to_file(proto_dataset, saved_game_proto, compressed=False)
-                    dataset_index[category].add(game_id)
+                        # Saving to disk
+                        hdf5_dataset[game_id] = np.void(saved_game_zlib)
+                        write_proto_to_file(proto_dataset, saved_game_proto, compressed=False)
+                        dataset_index[category].add(game_id)
 
-                    # Recording additional info
-                    get_end_scs_info(saved_game_proto, game_id, all_powers, sc_to_win, end_scs)
-                    get_moves_info(saved_game_proto, moves)
-                    nb_phases[game_id] = len(saved_game_proto.phases)
+                        # Recording additional info
+                        get_end_scs_info(saved_game_proto, game_id, all_powers, sc_to_win, end_scs)
+                        get_moves_info(saved_game_proto, moves)
+                        nb_phases[game_id] = len(saved_game_proto.phases)
 
-                    # Recording hash of each phase
-                    for phase in saved_game_proto.phases:
-                        hash_table.setdefault(phase.state.zobrist_hash, [])
-                        hash_table[phase.state.zobrist_hash] += ['%s/%s' % (game_id, phase.name)]
+                        # Recording hash of each phase
+                        for phase in saved_game_proto.phases:
+                            hash_table.setdefault(phase.state.zobrist_hash, [])
+                            hash_table[phase.state.zobrist_hash] += ['%s/%s' % (game_id, phase.name)]
 
     # Storing info to disk
     with open(DATASET_INDEX_PATH, 'wb') as file:
