@@ -760,6 +760,13 @@ _PHASEHISTORY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=_b('\020\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
+      name='future_orders_state', full_name='diplomacy_proto.PhaseHistory.future_orders_state', index=5,
+      number=8, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\020\001'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
       name='state_value', full_name='diplomacy_proto.PhaseHistory.state_value', index=6,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
@@ -1298,6 +1305,7 @@ _PHASEHISTORY_POLICYENTRY._options = None
 _PHASEHISTORY_STATEVALUEENTRY._options = None
 _PHASEHISTORY_POSSIBLEORDERSENTRY._options = None
 _PHASEHISTORY.fields_by_name['prev_orders_state']._options = None
+_PHASEHISTORY.fields_by_name['future_orders_state']._options = None
 _SAVEDGAME_KWARGSENTRY._options = None
 _SAVEDGAME_REWARDSENTRY._options = None
 _SAVEDGAME_RETURNSENTRY._options = None

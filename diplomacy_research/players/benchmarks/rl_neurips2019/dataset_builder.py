@@ -39,6 +39,7 @@ class BaseDatasetBuilder(BasePolicyBuilder):
             'board_state': FixedProtoField([NB_NODES, NB_FEATURES], np.uint8),
             'board_alignments': VarProtoField([NB_NODES * NB_SUPPLY_CENTERS], np.uint8),
             'prev_orders_state': FixedProtoField([NB_PREV_ORDERS, NB_NODES, NB_ORDERS_FEATURES], np.uint8),
+            'future_orders_state': FixedProtoField([NB_PREV_ORDERS, NB_NODES, NB_ORDERS_FEATURES], np.uint8), # NB_FUTURE_ORDERS = NB_PREV_ORDERS
             'decoder_inputs': VarProtoField([1 + NB_SUPPLY_CENTERS], np.int32),
             'decoder_lengths': FixedProtoField([], np.int32),
             'candidates': VarProtoField([None, MAX_CANDIDATES], np.int32),
@@ -58,7 +59,7 @@ class BaseDatasetBuilder(BasePolicyBuilder):
         return proto_fields
 
     @staticmethod
-    def get_feedable_item(locs, state_proto, power_name, phase_history_proto, possible_orders_proto, **kwargs):
+    def get_feedable_item(locs, state_proto, power_name, phase_history_proto, phase_future_proto, possible_orders_proto, **kwargs):
         """ Computes and return a feedable item (to be fed into the feedable queue)
             :param locs: A list of locations for which we want orders
             :param state_proto: A `.proto.game.State` representation of the state of the game.
@@ -139,6 +140,17 @@ class BaseDatasetBuilder(BasePolicyBuilder):
             prev_orders_state = [np.zeros((NB_NODES, NB_ORDERS_FEATURES), dtype=np.uint8)] + prev_orders_state
         prev_orders_state = np.array(prev_orders_state)
 
+        # Future orders state
+        future_orders_state = []
+        for phase_proto in (phase_future_proto):
+            if len(future_orders_state) == NB_PREV_ORDERS:
+                break
+            if phase_proto.name[-1] == 'M':
+                future_orders_state = [proto_to_prev_orders_state(phase_proto, map_object)] + future_orders_state #proto to future_order_state = prev_order_state
+        for _ in range(len(future_orders_state)):
+            future_orders_state = [np.zeros((NB_NODES, NB_ORDERS_FEATURES), dtype=np.uint8)] + future_orders_state
+        future_orders_state = np.array(future_orders_state)
+
         # Building (order) decoder inputs [GO_ID]
         decoder_inputs = [GO_ID]
 
@@ -157,6 +169,7 @@ class BaseDatasetBuilder(BasePolicyBuilder):
                                                      tokens_per_loc=1,
                                                      decoder_length=decoder_length),
             'prev_orders_state': prev_orders_state,
+            'future_orders_state': future_orders_state,
             'decoder_inputs': decoder_inputs,
             'decoder_lengths': decoder_length,
             'candidates': candidates,

@@ -62,6 +62,7 @@ message PhaseHistory {
 
     map<string, PolicyDetails> policy = 6;
     repeated uint32 prev_orders_state = 8 [packed = true];  // Flatten representation of prev_orders_state (M phases)
+    repeated uint32 future_orders_state = 8 [packed = true];  // Flatten representation of future_orders_state (M phases)
     map<string, float> state_value = 9;                     // Value of this state for each power
     map<string, StringList> possible_orders = 7;            // List of possible orders for each power
 }

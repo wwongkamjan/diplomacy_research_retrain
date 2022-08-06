@@ -79,6 +79,8 @@ class BaseAdvantage(metaclass=ABCMeta):
             orders = saved_game_proto.phases[phase_ix].orders
             phase_history = [saved_game_proto.phases[phase_order_ix]
                              for phase_order_ix in range(max(0, phase_ix - NB_PREV_ORDERS_HISTORY), phase_ix)]
+            phase_future = [saved_game_proto.phases[phase_order_ix]
+                             for phase_order_ix in range(min(phase_ix+1, len(saved_game_proto.phases)), min(len(saved_game_proto.phases), phase_ix+NB_PREV_ORDERS_HISTORY))] # NB_FUTURE_ORDERS_HISTORY = NB_PREV_ORDERS_HISTORY
             possible_orders = saved_game_proto.phases[phase_ix].possible_orders
             rewards = {power_name: saved_game_proto.rewards[power_name].value[phase_ix] for power_name in ALL_POWERS}
             current_return = saved_game_proto.returns[power_name].value[phase_ix]
@@ -95,6 +97,7 @@ class BaseAdvantage(metaclass=ABCMeta):
                                     rewards=rewards,
                                     orders=orders,
                                     phase_history=phase_history,
+                                    phase_future = phase_future,
                                     possible_orders=possible_orders)
 
             # Building transition details

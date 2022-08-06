@@ -434,6 +434,7 @@ class BaseAlgorithm(metaclass=ABCMeta):
                                           state_proto=transition.state,
                                           power_name=power_name,
                                           phase_history_proto=transition.phase_history,
+                                          phase_future_proto=transition.phase_future,
                                           possible_orders_proto=transition.possible_orders,
                                           **kwargs[power_name])
 

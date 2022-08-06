@@ -501,6 +501,7 @@ SCHEMA = {
                             'results': (_get_map_string_list, _set_map_string_list),
                             'policy': (_get_map_proto_no_default, _set_map_policy_details_proto),
                             'prev_orders_state': (_get_repeated_int, _set_repeated_int),
+                            'future_orders_state': (_get_repeated_int, _set_repeated_int),
                             'state_value': (_get_map_float, _set_map_float),
                             'possible_orders': (_get_map_string_list, _set_map_string_list)},
     game_pb2.PhaseHistory.PolicyDetails: {'locs': (_get_repeated_string, _set_repeated_string),

@@ -24,6 +24,7 @@ class Transition(
                                               'rewards',                # The rewards received by each power
                                               'orders',                 # {power => orders during the phase}
                                               'phase_history',          # The phase_history_proto
+                                              'phase_future',           # the phase_future_proto
                                               'possible_orders'))):     # The possible_orders_proto
     """ Represents a transition (state, action, reward) for all powers """
 
