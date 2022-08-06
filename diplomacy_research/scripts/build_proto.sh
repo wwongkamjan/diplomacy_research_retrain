@@ -13,7 +13,7 @@ fi
 # Finding all protofiles and generating them
 echo "-----------------------------------------"
 echo "Generating"
-PROTO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../proto/" && pwd )"
+PROTO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../proto/diplomacy_proto/" && pwd )"
 find $PROTO_DIR -type f -iname "*.proto" -print0 | while IFS= read -r -d $'\0' line; do
     ${PROTOC:=protoc} --proto_path=$PROTO_DIR --cpp_out=$PROTO_DIR --python_out=$PROTO_DIR "$line"
     echo "   * $line"
