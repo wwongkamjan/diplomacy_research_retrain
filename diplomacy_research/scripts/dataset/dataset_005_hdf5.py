@@ -30,7 +30,7 @@ from tqdm import tqdm
 import ujson as json
 from diplomacy_research.models.self_play.reward_functions import DefaultRewardFunction
 from diplomacy_research.models.state_space import get_map_powers, dict_to_flatten_board_state, \
-    dict_to_flatten_prev_orders_state, dict_to_flatten_future_orders_state, ALL_POWERS
+    dict_to_flatten_prev_orders_state, ALL_POWERS
 from diplomacy_research.proto.diplomacy_proto.game_pb2 import SavedGame as SavedGameProto
 from diplomacy_research.utils.proto import proto_to_zlib, dict_to_proto, write_proto_to_file, zlib_to_proto
 from diplomacy_research.settings import ZIP_DATASET_PATH, DATASET_PATH, PROTO_DATASET_PATH, DATASET_INDEX_PATH, \
