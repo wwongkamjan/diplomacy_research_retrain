@@ -643,6 +643,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::diplomacy_proto::PhaseHistory, results_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::diplomacy_proto::PhaseHistory, policy_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::diplomacy_proto::PhaseHistory, prev_orders_state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::diplomacy_proto::PhaseHistory, future_orders_state_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::diplomacy_proto::PhaseHistory, state_value_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::diplomacy_proto::PhaseHistory, possible_orders_),
   ~0u,  // no _has_bits_
@@ -717,11 +718,11 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 127, 134, sizeof(::diplomacy_proto::PhaseHistory_StateValueEntry_DoNotUse)},
   { 136, 143, sizeof(::diplomacy_proto::PhaseHistory_PossibleOrdersEntry_DoNotUse)},
   { 145, -1, sizeof(::diplomacy_proto::PhaseHistory)},
-  { 158, -1, sizeof(::diplomacy_proto::SavedGame_KeywordArgs)},
-  { 167, 174, sizeof(::diplomacy_proto::SavedGame_KwargsEntry_DoNotUse)},
-  { 176, 183, sizeof(::diplomacy_proto::SavedGame_RewardsEntry_DoNotUse)},
-  { 185, 192, sizeof(::diplomacy_proto::SavedGame_ReturnsEntry_DoNotUse)},
-  { 194, -1, sizeof(::diplomacy_proto::SavedGame)},
+  { 159, -1, sizeof(::diplomacy_proto::SavedGame_KeywordArgs)},
+  { 168, 175, sizeof(::diplomacy_proto::SavedGame_KwargsEntry_DoNotUse)},
+  { 177, 184, sizeof(::diplomacy_proto::SavedGame_RewardsEntry_DoNotUse)},
+  { 186, 193, sizeof(::diplomacy_proto::SavedGame_ReturnsEntry_DoNotUse)},
+  { 195, -1, sizeof(::diplomacy_proto::SavedGame)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -797,52 +798,52 @@ void AddDescriptorsImpl() {
       "4\n\022CivilDisorderEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
       "lue\030\002 \001(\005:\0028\001\032L\n\013BuildsEntry\022\013\n\003key\030\001 \001("
       "\t\022,\n\005value\030\002 \001(\0132\035.diplomacy_proto.State"
-      ".Builds:\0028\001\"\217\007\n\014PhaseHistory\022\014\n\004name\030\001 \001"
+      ".Builds:\0028\001\"\260\007\n\014PhaseHistory\022\014\n\004name\030\001 \001"
       "(\t\022%\n\005state\030\002 \001(\0132\026.diplomacy_proto.Stat"
       "e\0229\n\006orders\030\003 \003(\0132).diplomacy_proto.Phas"
       "eHistory.OrdersEntry\022;\n\007results\030\004 \003(\0132*."
       "diplomacy_proto.PhaseHistory.ResultsEntr"
       "y\0229\n\006policy\030\006 \003(\0132).diplomacy_proto.Phas"
       "eHistory.PolicyEntry\022\035\n\021prev_orders_stat"
-      "e\030\010 \003(\rB\002\020\001\022B\n\013state_value\030\t \003(\0132-.diplo"
-      "macy_proto.PhaseHistory.StateValueEntry\022"
-      "J\n\017possible_orders\030\007 \003(\01321.diplomacy_pro"
-      "to.PhaseHistory.PossibleOrdersEntry\032l\n\rP"
-      "olicyDetails\022\014\n\004locs\030\001 \003(\t\022\016\n\006tokens\030\002 \003"
-      "(\005\022\025\n\tlog_probs\030\003 \003(\002B\002\020\001\022\023\n\013draw_action"
-      "\030\004 \001(\010\022\021\n\tdraw_prob\030\005 \001(\002\032J\n\013OrdersEntry"
-      "\022\013\n\003key\030\001 \001(\t\022*\n\005value\030\002 \001(\0132\033.diplomacy"
-      "_proto.StringList:\0028\001\032K\n\014ResultsEntry\022\013\n"
-      "\003key\030\001 \001(\t\022*\n\005value\030\002 \001(\0132\033.diplomacy_pr"
-      "oto.StringList:\0028\001\032Z\n\013PolicyEntry\022\013\n\003key"
-      "\030\001 \001(\t\022:\n\005value\030\002 \001(\0132+.diplomacy_proto."
-      "PhaseHistory.PolicyDetails:\0028\001\0321\n\017StateV"
-      "alueEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\002:\0028"
-      "\001\032R\n\023PossibleOrdersEntry\022\013\n\003key\030\001 \001(\t\022*\n"
-      "\005value\030\002 \001(\0132\033.diplomacy_proto.StringLis"
-      "t:\0028\001\"\344\005\n\tSavedGame\022\n\n\002id\030\001 \001(\t\022\013\n\003map\030\002"
-      " \001(\t\022\r\n\005rules\030\003 \003(\t\022-\n\006phases\030\004 \003(\0132\035.di"
-      "plomacy_proto.PhaseHistory\022\023\n\013done_reaso"
-      "n\030\006 \001(\t\022\027\n\017assigned_powers\030\005 \003(\t\022\017\n\007play"
-      "ers\030\013 \003(\t\0226\n\006kwargs\030\n \003(\0132&.diplomacy_pr"
-      "oto.SavedGame.KwargsEntry\022\027\n\017is_partial_"
-      "game\030\014 \001(\010\022\026\n\016start_phase_ix\030\t \001(\005\022\021\n\tre"
-      "ward_fn\030\007 \001(\t\0228\n\007rewards\030\010 \003(\0132\'.diploma"
-      "cy_proto.SavedGame.RewardsEntry\0228\n\007retur"
-      "ns\030\r \003(\0132\'.diplomacy_proto.SavedGame.Ret"
-      "urnsEntry\032b\n\013KeywordArgs\022\023\n\013player_seed\030"
-      "\001 \001(\005\022\r\n\005noise\030\002 \001(\002\022\023\n\013temperature\030\003 \001("
-      "\002\022\024\n\014dropout_rate\030\005 \001(\002J\004\010\004\020\005\032U\n\013KwargsE"
-      "ntry\022\013\n\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.diplo"
-      "macy_proto.SavedGame.KeywordArgs:\0028\001\032J\n\014"
-      "RewardsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\013"
-      "2\032.diplomacy_proto.FloatList:\0028\001\032J\n\014Retu"
-      "rnsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.d"
-      "iplomacy_proto.FloatList:\0028\001B\003\370\001\001b\006proto"
-      "3"
+      "e\030\010 \003(\rB\002\020\001\022\037\n\023future_orders_state\030\n \003(\r"
+      "B\002\020\001\022B\n\013state_value\030\t \003(\0132-.diplomacy_pr"
+      "oto.PhaseHistory.StateValueEntry\022J\n\017poss"
+      "ible_orders\030\007 \003(\01321.diplomacy_proto.Phas"
+      "eHistory.PossibleOrdersEntry\032l\n\rPolicyDe"
+      "tails\022\014\n\004locs\030\001 \003(\t\022\016\n\006tokens\030\002 \003(\005\022\025\n\tl"
+      "og_probs\030\003 \003(\002B\002\020\001\022\023\n\013draw_action\030\004 \001(\010\022"
+      "\021\n\tdraw_prob\030\005 \001(\002\032J\n\013OrdersEntry\022\013\n\003key"
+      "\030\001 \001(\t\022*\n\005value\030\002 \001(\0132\033.diplomacy_proto."
+      "StringList:\0028\001\032K\n\014ResultsEntry\022\013\n\003key\030\001 "
+      "\001(\t\022*\n\005value\030\002 \001(\0132\033.diplomacy_proto.Str"
+      "ingList:\0028\001\032Z\n\013PolicyEntry\022\013\n\003key\030\001 \001(\t\022"
+      ":\n\005value\030\002 \001(\0132+.diplomacy_proto.PhaseHi"
+      "story.PolicyDetails:\0028\001\0321\n\017StateValueEnt"
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\002:\0028\001\032R\n\023Po"
+      "ssibleOrdersEntry\022\013\n\003key\030\001 \001(\t\022*\n\005value\030"
+      "\002 \001(\0132\033.diplomacy_proto.StringList:\0028\001\"\344"
+      "\005\n\tSavedGame\022\n\n\002id\030\001 \001(\t\022\013\n\003map\030\002 \001(\t\022\r\n"
+      "\005rules\030\003 \003(\t\022-\n\006phases\030\004 \003(\0132\035.diplomacy"
+      "_proto.PhaseHistory\022\023\n\013done_reason\030\006 \001(\t"
+      "\022\027\n\017assigned_powers\030\005 \003(\t\022\017\n\007players\030\013 \003"
+      "(\t\0226\n\006kwargs\030\n \003(\0132&.diplomacy_proto.Sav"
+      "edGame.KwargsEntry\022\027\n\017is_partial_game\030\014 "
+      "\001(\010\022\026\n\016start_phase_ix\030\t \001(\005\022\021\n\treward_fn"
+      "\030\007 \001(\t\0228\n\007rewards\030\010 \003(\0132\'.diplomacy_prot"
+      "o.SavedGame.RewardsEntry\0228\n\007returns\030\r \003("
+      "\0132\'.diplomacy_proto.SavedGame.ReturnsEnt"
+      "ry\032b\n\013KeywordArgs\022\023\n\013player_seed\030\001 \001(\005\022\r"
+      "\n\005noise\030\002 \001(\002\022\023\n\013temperature\030\003 \001(\002\022\024\n\014dr"
+      "opout_rate\030\005 \001(\002J\004\010\004\020\005\032U\n\013KwargsEntry\022\013\n"
+      "\003key\030\001 \001(\t\0225\n\005value\030\002 \001(\0132&.diplomacy_pr"
+      "oto.SavedGame.KeywordArgs:\0028\001\032J\n\014Rewards"
+      "Entry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.dipl"
+      "omacy_proto.FloatList:\0028\001\032J\n\014ReturnsEntr"
+      "y\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.diplomac"
+      "y_proto.FloatList:\0028\001B\003\370\001\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2801);
+      descriptor, 2834);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "diplomacy_proto/game.proto", &protobuf_RegisterTypes);
   ::protobuf_diplomacy_5fproto_2fcommon_2eproto::AddDescriptors();
@@ -4017,6 +4018,7 @@ const int PhaseHistory::kOrdersFieldNumber;
 const int PhaseHistory::kResultsFieldNumber;
 const int PhaseHistory::kPolicyFieldNumber;
 const int PhaseHistory::kPrevOrdersStateFieldNumber;
+const int PhaseHistory::kFutureOrdersStateFieldNumber;
 const int PhaseHistory::kStateValueFieldNumber;
 const int PhaseHistory::kPossibleOrdersFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -4036,7 +4038,8 @@ PhaseHistory::PhaseHistory(::google::protobuf::Arena* arena)
   policy_(arena),
   possible_orders_(arena),
   prev_orders_state_(arena),
-  state_value_(arena) {
+  state_value_(arena),
+  future_orders_state_(arena) {
   ::google::protobuf::internal::InitSCC(&protobuf_diplomacy_5fproto_2fgame_2eproto::scc_info_PhaseHistory.base);
   SharedCtor();
   RegisterArenaDtor(arena);
@@ -4045,7 +4048,8 @@ PhaseHistory::PhaseHistory(::google::protobuf::Arena* arena)
 PhaseHistory::PhaseHistory(const PhaseHistory& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      prev_orders_state_(from.prev_orders_state_) {
+      prev_orders_state_(from.prev_orders_state_),
+      future_orders_state_(from.future_orders_state_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   orders_.MergeFrom(from.orders_);
   results_.MergeFrom(from.results_);
@@ -4113,6 +4117,7 @@ void PhaseHistory::Clear() {
   possible_orders_.Clear();
   prev_orders_state_.Clear();
   state_value_.Clear();
+  future_orders_state_.Clear();
   name_.ClearToEmpty(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), GetArenaNoVirtual());
   if (GetArenaNoVirtual() == NULL && state_ != NULL) {
     delete state_;
@@ -4287,6 +4292,25 @@ bool PhaseHistory::MergePartialFromCodedStream(
             parser.key().data(), static_cast<int>(parser.key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "diplomacy_proto.PhaseHistory.StateValueEntry.key"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated uint32 future_orders_state = 10 [packed = true];
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, this->mutable_future_orders_state())));
+        } else if (
+            static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(80u /* 80 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 1, 82u, input, this->mutable_future_orders_state())));
         } else {
           goto handle_unusual;
         }
@@ -4619,6 +4643,17 @@ void PhaseHistory::SerializeWithCachedSizes(
         Utf8Check::Check(&*it);
       }
     }
+  }
+
+  // repeated uint32 future_orders_state = 10 [packed = true];
+  if (this->future_orders_state_size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteTag(10, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
+    output->WriteVarint32(static_cast< ::google::protobuf::uint32>(
+        _future_orders_state_cached_byte_size_));
+  }
+  for (int i = 0, n = this->future_orders_state_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
+      this->future_orders_state(i), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -4961,6 +4996,19 @@ void PhaseHistory::SerializeWithCachedSizes(
     }
   }
 
+  // repeated uint32 future_orders_state = 10 [packed = true];
+  if (this->future_orders_state_size() > 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
+      10,
+      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
+      target);
+    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
+        static_cast< ::google::protobuf::int32>(
+            _future_orders_state_cached_byte_size_), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteUInt32NoTagToArray(this->future_orders_state_, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -5094,6 +5142,22 @@ size_t PhaseHistory::ByteSizeLong() const {
     }
   }
 
+  // repeated uint32 future_orders_state = 10 [packed = true];
+  {
+    size_t data_size = ::google::protobuf::internal::WireFormatLite::
+      UInt32Size(this->future_orders_state_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+            static_cast< ::google::protobuf::int32>(data_size));
+    }
+    int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
+    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+    _future_orders_state_cached_byte_size_ = cached_size;
+    GOOGLE_SAFE_CONCURRENT_WRITES_END();
+    total_size += data_size;
+  }
+
   // string name = 1;
   if (this->name().size() > 0) {
     total_size += 1 +
@@ -5141,6 +5205,7 @@ void PhaseHistory::MergeFrom(const PhaseHistory& from) {
   possible_orders_.MergeFrom(from.possible_orders_);
   prev_orders_state_.MergeFrom(from.prev_orders_state_);
   state_value_.MergeFrom(from.state_value_);
+  future_orders_state_.MergeFrom(from.future_orders_state_);
   if (from.name().size() > 0) {
     set_name(from.name());
   }
@@ -5194,6 +5259,7 @@ void PhaseHistory::InternalSwap(PhaseHistory* other) {
   possible_orders_.Swap(&other->possible_orders_);
   prev_orders_state_.InternalSwap(&other->prev_orders_state_);
   state_value_.Swap(&other->state_value_);
+  future_orders_state_.InternalSwap(&other->future_orders_state_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(state_, other->state_);

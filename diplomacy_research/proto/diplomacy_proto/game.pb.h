@@ -1437,6 +1437,18 @@ class PhaseHistory : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::Map< ::std::string, float >*
       mutable_state_value();
 
+  // repeated uint32 future_orders_state = 10 [packed = true];
+  int future_orders_state_size() const;
+  void clear_future_orders_state();
+  static const int kFutureOrdersStateFieldNumber = 10;
+  ::google::protobuf::uint32 future_orders_state(int index) const;
+  void set_future_orders_state(int index, ::google::protobuf::uint32 value);
+  void add_future_orders_state(::google::protobuf::uint32 value);
+  const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      future_orders_state() const;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_future_orders_state();
+
   // string name = 1;
   void clear_name();
   static const int kNameFieldNumber = 1;
@@ -1514,6 +1526,8 @@ class PhaseHistory : public ::google::protobuf::Message /* @@protoc_insertion_po
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT,
       0 > state_value_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > future_orders_state_;
+  mutable int _future_orders_state_cached_byte_size_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::diplomacy_proto::State* state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -3490,6 +3504,36 @@ inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
 PhaseHistory::mutable_prev_orders_state() {
   // @@protoc_insertion_point(field_mutable_list:diplomacy_proto.PhaseHistory.prev_orders_state)
   return &prev_orders_state_;
+}
+
+// repeated uint32 future_orders_state = 10 [packed = true];
+inline int PhaseHistory::future_orders_state_size() const {
+  return future_orders_state_.size();
+}
+inline void PhaseHistory::clear_future_orders_state() {
+  future_orders_state_.Clear();
+}
+inline ::google::protobuf::uint32 PhaseHistory::future_orders_state(int index) const {
+  // @@protoc_insertion_point(field_get:diplomacy_proto.PhaseHistory.future_orders_state)
+  return future_orders_state_.Get(index);
+}
+inline void PhaseHistory::set_future_orders_state(int index, ::google::protobuf::uint32 value) {
+  future_orders_state_.Set(index, value);
+  // @@protoc_insertion_point(field_set:diplomacy_proto.PhaseHistory.future_orders_state)
+}
+inline void PhaseHistory::add_future_orders_state(::google::protobuf::uint32 value) {
+  future_orders_state_.Add(value);
+  // @@protoc_insertion_point(field_add:diplomacy_proto.PhaseHistory.future_orders_state)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+PhaseHistory::future_orders_state() const {
+  // @@protoc_insertion_point(field_list:diplomacy_proto.PhaseHistory.future_orders_state)
+  return future_orders_state_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+PhaseHistory::mutable_future_orders_state() {
+  // @@protoc_insertion_point(field_mutable_list:diplomacy_proto.PhaseHistory.future_orders_state)
+  return &future_orders_state_;
 }
 
 // map<string, float> state_value = 9;

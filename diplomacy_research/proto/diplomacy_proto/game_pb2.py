@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='diplomacy_proto',
   syntax='proto3',
   serialized_options=_b('\370\001\001'),
-  serialized_pb=_b('\n\x1a\x64iplomacy_proto/game.proto\x12\x0f\x64iplomacy_proto\x1a\x1c\x64iplomacy_proto/common.proto\"s\n\x07Message\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x11\n\trecipient\x18\x02 \x01(\t\x12\x11\n\ttime_sent\x18\x03 \x01(\x03\x12\r\n\x05phase\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\x12\x12\n\x06tokens\x18\x06 \x03(\rB\x02\x10\x01\"\xa8\x07\n\x05State\x12\x0f\n\x07game_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03map\x18\x03 \x01(\t\x12\x14\n\x0czobrist_hash\x18\r \x01(\t\x12\r\n\x05rules\x18\x04 \x03(\t\x12\x30\n\x05units\x18\x05 \x03(\x0b\x32!.diplomacy_proto.State.UnitsEntry\x12\x34\n\x07\x63\x65nters\x18\x06 \x03(\x0b\x32#.diplomacy_proto.State.CentersEntry\x12\x30\n\x05homes\x18\x07 \x03(\x0b\x32!.diplomacy_proto.State.HomesEntry\x12\x38\n\tinfluence\x18\x08 \x03(\x0b\x32%.diplomacy_proto.State.InfluenceEntry\x12\x41\n\x0e\x63ivil_disorder\x18\t \x03(\x0b\x32).diplomacy_proto.State.CivilDisorderEntry\x12\x32\n\x06\x62uilds\x18\n \x03(\x0b\x32\".diplomacy_proto.State.BuildsEntry\x12\x0c\n\x04note\x18\x0b \x01(\t\x12\x17\n\x0b\x62oard_state\x18\x0c \x03(\rB\x02\x10\x01\x1a&\n\x06\x42uilds\x12\r\n\x05\x63ount\x18\x01 \x01(\x05\x12\r\n\x05homes\x18\x02 \x03(\t\x1aI\n\nUnitsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aK\n\x0c\x43\x65ntersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aI\n\nHomesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aM\n\x0eInfluenceEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1a\x34\n\x12\x43ivilDisorderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1aL\n\x0b\x42uildsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x05value\x18\x02 \x01(\x0b\x32\x1d.diplomacy_proto.State.Builds:\x02\x38\x01\"\x8f\x07\n\x0cPhaseHistory\x12\x0c\n\x04name\x18\x01 \x01(\t\x12%\n\x05state\x18\x02 \x01(\x0b\x32\x16.diplomacy_proto.State\x12\x39\n\x06orders\x18\x03 \x03(\x0b\x32).diplomacy_proto.PhaseHistory.OrdersEntry\x12;\n\x07results\x18\x04 \x03(\x0b\x32*.diplomacy_proto.PhaseHistory.ResultsEntry\x12\x39\n\x06policy\x18\x06 \x03(\x0b\x32).diplomacy_proto.PhaseHistory.PolicyEntry\x12\x1d\n\x11prev_orders_state\x18\x08 \x03(\rB\x02\x10\x01\x12\x42\n\x0bstate_value\x18\t \x03(\x0b\x32-.diplomacy_proto.PhaseHistory.StateValueEntry\x12J\n\x0fpossible_orders\x18\x07 \x03(\x0b\x32\x31.diplomacy_proto.PhaseHistory.PossibleOrdersEntry\x1al\n\rPolicyDetails\x12\x0c\n\x04locs\x18\x01 \x03(\t\x12\x0e\n\x06tokens\x18\x02 \x03(\x05\x12\x15\n\tlog_probs\x18\x03 \x03(\x02\x42\x02\x10\x01\x12\x13\n\x0b\x64raw_action\x18\x04 \x01(\x08\x12\x11\n\tdraw_prob\x18\x05 \x01(\x02\x1aJ\n\x0bOrdersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aK\n\x0cResultsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aZ\n\x0bPolicyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12:\n\x05value\x18\x02 \x01(\x0b\x32+.diplomacy_proto.PhaseHistory.PolicyDetails:\x02\x38\x01\x1a\x31\n\x0fStateValueEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1aR\n\x13PossibleOrdersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\"\xe4\x05\n\tSavedGame\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03map\x18\x02 \x01(\t\x12\r\n\x05rules\x18\x03 \x03(\t\x12-\n\x06phases\x18\x04 \x03(\x0b\x32\x1d.diplomacy_proto.PhaseHistory\x12\x13\n\x0b\x64one_reason\x18\x06 \x01(\t\x12\x17\n\x0f\x61ssigned_powers\x18\x05 \x03(\t\x12\x0f\n\x07players\x18\x0b \x03(\t\x12\x36\n\x06kwargs\x18\n \x03(\x0b\x32&.diplomacy_proto.SavedGame.KwargsEntry\x12\x17\n\x0fis_partial_game\x18\x0c \x01(\x08\x12\x16\n\x0estart_phase_ix\x18\t \x01(\x05\x12\x11\n\treward_fn\x18\x07 \x01(\t\x12\x38\n\x07rewards\x18\x08 \x03(\x0b\x32\'.diplomacy_proto.SavedGame.RewardsEntry\x12\x38\n\x07returns\x18\r \x03(\x0b\x32\'.diplomacy_proto.SavedGame.ReturnsEntry\x1a\x62\n\x0bKeywordArgs\x12\x13\n\x0bplayer_seed\x18\x01 \x01(\x05\x12\r\n\x05noise\x18\x02 \x01(\x02\x12\x13\n\x0btemperature\x18\x03 \x01(\x02\x12\x14\n\x0c\x64ropout_rate\x18\x05 \x01(\x02J\x04\x08\x04\x10\x05\x1aU\n\x0bKwargsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.diplomacy_proto.SavedGame.KeywordArgs:\x02\x38\x01\x1aJ\n\x0cRewardsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.diplomacy_proto.FloatList:\x02\x38\x01\x1aJ\n\x0cReturnsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.diplomacy_proto.FloatList:\x02\x38\x01\x42\x03\xf8\x01\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x1a\x64iplomacy_proto/game.proto\x12\x0f\x64iplomacy_proto\x1a\x1c\x64iplomacy_proto/common.proto\"s\n\x07Message\x12\x0e\n\x06sender\x18\x01 \x01(\t\x12\x11\n\trecipient\x18\x02 \x01(\t\x12\x11\n\ttime_sent\x18\x03 \x01(\x03\x12\r\n\x05phase\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\x12\x12\n\x06tokens\x18\x06 \x03(\rB\x02\x10\x01\"\xa8\x07\n\x05State\x12\x0f\n\x07game_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03map\x18\x03 \x01(\t\x12\x14\n\x0czobrist_hash\x18\r \x01(\t\x12\r\n\x05rules\x18\x04 \x03(\t\x12\x30\n\x05units\x18\x05 \x03(\x0b\x32!.diplomacy_proto.State.UnitsEntry\x12\x34\n\x07\x63\x65nters\x18\x06 \x03(\x0b\x32#.diplomacy_proto.State.CentersEntry\x12\x30\n\x05homes\x18\x07 \x03(\x0b\x32!.diplomacy_proto.State.HomesEntry\x12\x38\n\tinfluence\x18\x08 \x03(\x0b\x32%.diplomacy_proto.State.InfluenceEntry\x12\x41\n\x0e\x63ivil_disorder\x18\t \x03(\x0b\x32).diplomacy_proto.State.CivilDisorderEntry\x12\x32\n\x06\x62uilds\x18\n \x03(\x0b\x32\".diplomacy_proto.State.BuildsEntry\x12\x0c\n\x04note\x18\x0b \x01(\t\x12\x17\n\x0b\x62oard_state\x18\x0c \x03(\rB\x02\x10\x01\x1a&\n\x06\x42uilds\x12\r\n\x05\x63ount\x18\x01 \x01(\x05\x12\r\n\x05homes\x18\x02 \x03(\t\x1aI\n\nUnitsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aK\n\x0c\x43\x65ntersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aI\n\nHomesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aM\n\x0eInfluenceEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1a\x34\n\x12\x43ivilDisorderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1aL\n\x0b\x42uildsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x05value\x18\x02 \x01(\x0b\x32\x1d.diplomacy_proto.State.Builds:\x02\x38\x01\"\xb0\x07\n\x0cPhaseHistory\x12\x0c\n\x04name\x18\x01 \x01(\t\x12%\n\x05state\x18\x02 \x01(\x0b\x32\x16.diplomacy_proto.State\x12\x39\n\x06orders\x18\x03 \x03(\x0b\x32).diplomacy_proto.PhaseHistory.OrdersEntry\x12;\n\x07results\x18\x04 \x03(\x0b\x32*.diplomacy_proto.PhaseHistory.ResultsEntry\x12\x39\n\x06policy\x18\x06 \x03(\x0b\x32).diplomacy_proto.PhaseHistory.PolicyEntry\x12\x1d\n\x11prev_orders_state\x18\x08 \x03(\rB\x02\x10\x01\x12\x1f\n\x13\x66uture_orders_state\x18\n \x03(\rB\x02\x10\x01\x12\x42\n\x0bstate_value\x18\t \x03(\x0b\x32-.diplomacy_proto.PhaseHistory.StateValueEntry\x12J\n\x0fpossible_orders\x18\x07 \x03(\x0b\x32\x31.diplomacy_proto.PhaseHistory.PossibleOrdersEntry\x1al\n\rPolicyDetails\x12\x0c\n\x04locs\x18\x01 \x03(\t\x12\x0e\n\x06tokens\x18\x02 \x03(\x05\x12\x15\n\tlog_probs\x18\x03 \x03(\x02\x42\x02\x10\x01\x12\x13\n\x0b\x64raw_action\x18\x04 \x01(\x08\x12\x11\n\tdraw_prob\x18\x05 \x01(\x02\x1aJ\n\x0bOrdersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aK\n\x0cResultsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\x1aZ\n\x0bPolicyEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12:\n\x05value\x18\x02 \x01(\x0b\x32+.diplomacy_proto.PhaseHistory.PolicyDetails:\x02\x38\x01\x1a\x31\n\x0fStateValueEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1aR\n\x13PossibleOrdersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x1b.diplomacy_proto.StringList:\x02\x38\x01\"\xe4\x05\n\tSavedGame\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03map\x18\x02 \x01(\t\x12\r\n\x05rules\x18\x03 \x03(\t\x12-\n\x06phases\x18\x04 \x03(\x0b\x32\x1d.diplomacy_proto.PhaseHistory\x12\x13\n\x0b\x64one_reason\x18\x06 \x01(\t\x12\x17\n\x0f\x61ssigned_powers\x18\x05 \x03(\t\x12\x0f\n\x07players\x18\x0b \x03(\t\x12\x36\n\x06kwargs\x18\n \x03(\x0b\x32&.diplomacy_proto.SavedGame.KwargsEntry\x12\x17\n\x0fis_partial_game\x18\x0c \x01(\x08\x12\x16\n\x0estart_phase_ix\x18\t \x01(\x05\x12\x11\n\treward_fn\x18\x07 \x01(\t\x12\x38\n\x07rewards\x18\x08 \x03(\x0b\x32\'.diplomacy_proto.SavedGame.RewardsEntry\x12\x38\n\x07returns\x18\r \x03(\x0b\x32\'.diplomacy_proto.SavedGame.ReturnsEntry\x1a\x62\n\x0bKeywordArgs\x12\x13\n\x0bplayer_seed\x18\x01 \x01(\x05\x12\r\n\x05noise\x18\x02 \x01(\x02\x12\x13\n\x0btemperature\x18\x03 \x01(\x02\x12\x14\n\x0c\x64ropout_rate\x18\x05 \x01(\x02J\x04\x08\x04\x10\x05\x1aU\n\x0bKwargsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.diplomacy_proto.SavedGame.KeywordArgs:\x02\x38\x01\x1aJ\n\x0cRewardsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.diplomacy_proto.FloatList:\x02\x38\x01\x1aJ\n\x0cReturnsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x1a.diplomacy_proto.FloatList:\x02\x38\x01\x42\x03\xf8\x01\x01\x62\x06proto3')
   ,
   dependencies=[diplomacy__proto_dot_common__pb2.DESCRIPTOR,])
 
@@ -521,8 +521,8 @@ _PHASEHISTORY_POLICYDETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1557,
-  serialized_end=1665,
+  serialized_start=1590,
+  serialized_end=1698,
 )
 
 _PHASEHISTORY_ORDERSENTRY = _descriptor.Descriptor(
@@ -558,8 +558,8 @@ _PHASEHISTORY_ORDERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1667,
-  serialized_end=1741,
+  serialized_start=1700,
+  serialized_end=1774,
 )
 
 _PHASEHISTORY_RESULTSENTRY = _descriptor.Descriptor(
@@ -595,8 +595,8 @@ _PHASEHISTORY_RESULTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1743,
-  serialized_end=1818,
+  serialized_start=1776,
+  serialized_end=1851,
 )
 
 _PHASEHISTORY_POLICYENTRY = _descriptor.Descriptor(
@@ -632,8 +632,8 @@ _PHASEHISTORY_POLICYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1820,
-  serialized_end=1910,
+  serialized_start=1853,
+  serialized_end=1943,
 )
 
 _PHASEHISTORY_STATEVALUEENTRY = _descriptor.Descriptor(
@@ -669,8 +669,8 @@ _PHASEHISTORY_STATEVALUEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1912,
-  serialized_end=1961,
+  serialized_start=1945,
+  serialized_end=1994,
 )
 
 _PHASEHISTORY_POSSIBLEORDERSENTRY = _descriptor.Descriptor(
@@ -706,8 +706,8 @@ _PHASEHISTORY_POSSIBLEORDERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1963,
-  serialized_end=2045,
+  serialized_start=1996,
+  serialized_end=2078,
 )
 
 _PHASEHISTORY = _descriptor.Descriptor(
@@ -760,21 +760,21 @@ _PHASEHISTORY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=_b('\020\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='future_orders_state', full_name='diplomacy_proto.PhaseHistory.future_orders_state', index=5,
-      number=8, type=13, cpp_type=3, label=3,
+      name='future_orders_state', full_name='diplomacy_proto.PhaseHistory.future_orders_state', index=6,
+      number=10, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\020\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='state_value', full_name='diplomacy_proto.PhaseHistory.state_value', index=6,
+      name='state_value', full_name='diplomacy_proto.PhaseHistory.state_value', index=7,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='possible_orders', full_name='diplomacy_proto.PhaseHistory.possible_orders', index=7,
+      name='possible_orders', full_name='diplomacy_proto.PhaseHistory.possible_orders', index=8,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -793,7 +793,7 @@ _PHASEHISTORY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1134,
-  serialized_end=2045,
+  serialized_end=2078,
 )
 
 
@@ -844,8 +844,8 @@ _SAVEDGAME_KEYWORDARGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2451,
-  serialized_end=2549,
+  serialized_start=2484,
+  serialized_end=2582,
 )
 
 _SAVEDGAME_KWARGSENTRY = _descriptor.Descriptor(
@@ -881,8 +881,8 @@ _SAVEDGAME_KWARGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2551,
-  serialized_end=2636,
+  serialized_start=2584,
+  serialized_end=2669,
 )
 
 _SAVEDGAME_REWARDSENTRY = _descriptor.Descriptor(
@@ -918,8 +918,8 @@ _SAVEDGAME_REWARDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2638,
-  serialized_end=2712,
+  serialized_start=2671,
+  serialized_end=2745,
 )
 
 _SAVEDGAME_RETURNSENTRY = _descriptor.Descriptor(
@@ -955,8 +955,8 @@ _SAVEDGAME_RETURNSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2714,
-  serialized_end=2788,
+  serialized_start=2747,
+  serialized_end=2821,
 )
 
 _SAVEDGAME = _descriptor.Descriptor(
@@ -1069,8 +1069,8 @@ _SAVEDGAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2048,
-  serialized_end=2788,
+  serialized_start=2081,
+  serialized_end=2821,
 )
 
 _STATE_BUILDS.containing_type = _STATE
