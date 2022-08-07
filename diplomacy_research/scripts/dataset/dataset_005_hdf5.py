@@ -64,7 +64,7 @@ def add_cached_states_to_saved_game(saved_game):
             phase['state']['board_state'] = dict_to_flatten_board_state(phase['state'], map_object)
             if phase['name'][-1] == 'M':
                 phase['prev_orders_state'] = dict_to_flatten_prev_orders_state(phase, map_object)
-                phase['future_orders_state'] = dict_to_flatten_future_orders_state(phase, map_object)
+                phase['future_orders_state'] = dict_to_flatten_prev_orders_state(phase, map_object)
     return saved_game
 
 def add_rewards_to_saved_game_proto(saved_game_proto, reward_fn):
